@@ -1,8 +1,8 @@
-export default function Select({ id, options, label }) {
+export default function Select({ id, options, label, value, onChange }) {
     return (
         <div>
             <label
-                for={id}
+                htmlFor={id}
                 className="block text-sm font-medium text-sepia-700 mb-2"
             >
                 {label}
@@ -10,6 +10,8 @@ export default function Select({ id, options, label }) {
             <select
                 id={id}
                 className="w-full px-4 py-3 border border-sepia-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all bg-paper text-sepia-800 cursor-pointer"
+                value={value}
+                onChange={onChange}
             >
                 {options && options.length && options.map((option, index) =>(
                     <option key={index} value={option.value}> 
